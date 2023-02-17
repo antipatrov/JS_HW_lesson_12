@@ -1,0 +1,163 @@
+         * {
+             margin: 0;
+             padding: 0;
+         }
+         
+         .main {
+             max-width: 1960px;
+             height: 960px;
+         }
+         
+         .container {
+             display: flex;
+             justify-content: center;
+             margin-top: 30px;
+             max-width: 1960px;
+             height: 960px;
+         }
+         
+         .player {
+             display: flex;
+             justify-content: center;
+             flex-wrap: wrap;
+             width: 1920px;
+         }
+         
+         .screen {
+             position: relative;
+             display: flex;
+             flex-wrap: wrap;
+             /* justify-content: center; */
+             align-items: center;
+             width: 1692px;
+             height: 929px;
+             border: 1px solid black;
+             left: 85px;
+             top: 23px;
+             background: #FFFFFF;
+         }
+         
+         .vid {
+             width: 1692px;
+             height: 929px;
+         }
+         
+         .panel {
+             position: absolute;
+             width: 1543px;
+             height: 117.56px;
+             left: calc(50% - 1543px/2 - 3.5px);
+             bottom: 28.44px;
+             margin-top: 783px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             /* Button */
+             background: rgba(45, 45, 45, 0.65);
+             backdrop-filter: blur(4.90647px);
+             /* Note: backdrop-filter has minimal browser support */
+             border-radius: 31.4014px;
+         }
+         
+         .back {
+             position: absolute;
+             height: 232px;
+             width: 232px;
+             left: 307px;
+             top: 346px;
+             background-color: transparent;
+             border: #FFFFFF;
+         }
+         
+         .btn-pause {
+             position: absolute;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             width: 236.77px;
+             height: 234.69px;
+             left: 695px;
+         }
+         
+         .forward {
+             position: absolute;
+             height: 232px;
+             width: 232px;
+             right: 390px;
+             top: 346px;
+             border-radius: 0px;
+             background-color: transparent;
+             border: #FFFFFF;
+         }
+         
+         .time-start {
+             display: flex;
+             align-items: center;
+             width: 43px;
+             height: 35px;
+             font-family: 'Poppins';
+             font-style: normal;
+             font-weight: 400;
+             font-size: 20px;
+             color: #FFFFFF;
+             /* Inside auto layout */
+             flex: none;
+             order: 0;
+             flex-grow: 0;
+         }
+         
+         .time-line {
+             display: flex;
+             flex-wrap: nowrap;
+             justify-content: space-between;
+             align-items: center;
+             width: 932px;
+             height: 35px;
+         }
+         
+         .time-end {
+             display: flex;
+             align-items: center;
+             width: 40px;
+             height: 35px;
+             font-family: 'Poppins';
+             font-style: normal;
+             font-weight: 400;
+             font-size: 20px;
+             line-height: 35px;
+             color: #FFFFFF;
+             /* Inside auto layout */
+             flex: none;
+             order: 2;
+             flex-grow: 0;
+         }
+         
+         .controls-elements {
+             display: flex;
+             align-items: center;
+             justify-content: space-around;
+             width: 1493.61px;
+             height: 47.02px;
+             margin-left: 79px;
+         }
+         
+         .duration {
+             width: 834.1px;
+             height: 23.55px;
+             range: infinite;
+             flex: none;
+             order: 1;
+             flex-grow: 0;
+             -webkit-appearance: none;
+             /* Override default CSS styles */
+             appearance: none;
+             background: #d3d3d3;
+             /* Grey background */
+             outline: none;
+             /* Remove outline */
+             opacity: 0.7;
+             /* Set transparency (for mouse-over effects on hover) */
+             -webkit-transition: .2s;
+             /* 0.2 seconds transition on hover */
+             transition: opacity .2s;
+         }

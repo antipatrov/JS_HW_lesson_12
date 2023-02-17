@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class='main'>
+        <div class="container">
+            <div class="player">
+                <div class="screen">
+                    <video class="vid" height="350" width="500">
+                        <source src='.\img\Particle_background1.mp4'>
+                    </video>
+                    <button class="back">
+                        <img src=".\img\back.png">
+                    </button>
+
+                    <div class='btn-pause'>
+                        <img class="pause" src=".\img\Group 1.png" alt="pause">
+                    </div>
+                    <button class="forward">
+                        <img src=".\img\forward.png" alt="forward" class="">
+                    </button>
+                    <div class="panel">
+                        <div class="controls-elements">
+
+                            <img class="play" src=".\img\bi_play-circle-fill.png" alt="play">
+
+                            <div class="time-line">
+                                <div class="time-start"><time class="time-start-clock"><span
+                                            class='min-start'>00</span>:<span class='sec-start'>00</span></time></div>
+                                <input type="range" class="duration" min="0" max="100" step="1" value="0" id="myRange">
+                                <div class="time-end"><time class="time-end-clock"><span class='min-end'>00</span>:<span
+                                            class='sec-end'>00</span></time></div>
+                            </div>
+                            <img src=".\img\fluent_next-16-filled.png" alt="" class="fluent-next">
+                            <img src=".\img\volume-2.png" alt="" class="volume">
+                            <img src=".\img\settings.png" alt="" class="settings">
+                            <img src=".\img\maximize.png" alt="" class="maximize">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+    <script>
+        const vidEl = document.querySelector('.vid');
+        const backEl = document.querySelector('.back');
+        const btnPauseEl = document.querySelector('.btn-pause');
+        const pauseEl = document.querySelector('.pause');
+        const forwardEl = document.querySelector('.forward');
+        const playEl = document.querySelector('.play');
+        const minStartEl = document.querySelector('.min-start');
+        const minEndEl = document.querySelector('.min-end');
+        const secStartEl = document.querySelector('.sec-start');
+        const secEndEl = document.querySelector('.sec-end');
+
+        forwardEl.addEventListener('click', function (e) {
+            vidEl.currentTime += 2;
+            vidEl.addEventListener("timeupdate", myFunction);
+
+            function myFunction() {
+                secStartEl.textContent = Math.round(vidEl.currentTime);
+            }
+        });
+
+        backEl.addEventListener('click', function (e) {
+            vidEl.currentTime -= 2;
+            vidEl.addEventListener("timeupdate", myFunction);
+
+            function myFunction() {
+                secStartEl.textContent = Math.round(vidEl.currentTime);
+            }
+        });
+
+        btnPauseEl.addEventListener('click', function (e) {
+            if (!vidEl.paused) {
+                vidEl.pause();
+            } else {
+                vidEl.play();
+            }
+        });
+
+        playEl.addEventListener('click', function (e) {
+
+            if (vidEl.paused) {
+                vidEl.play();
+            } else {
+                vidEl.pause();
+            }
+        });
+
+
+        vidEl.addEventListener("timeupdate", myFunction);
+
+        function myFunction() {
+            secStartEl.textContent = Math.round(vidEl.currentTime);
+        };
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
